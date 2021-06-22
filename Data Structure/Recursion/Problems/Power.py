@@ -1,4 +1,5 @@
 '''
+19/06/2021
 Write a function called power which accepts a base and exponent.
 The function should return the power of the base to the exponent.
 This function should mimic the functionality of math.pow()
