@@ -1,4 +1,5 @@
 '''
+Author: Hongxiang Qi
 22/06/2021
 Write a function factorial which accepts a number and returns the factorial of that number.
 A factorial is the product of an integer and all the inegers below it;
