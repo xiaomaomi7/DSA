@@ -13,14 +13,26 @@ Example:
 '''
 Apporach:
     1. Recursive case - the flow
-        reverse(s) =    
+        reverse(s) = s[-1] + reverse(s[:len(s)-1])
 
 
     2. Base condition - the stopping criterion
-        n = 0, return 0
-        n = 1, return 1
+        len(s) <= 0 return ""
 
     3. Unintentional case - the constraint
-        fib(1.1) - error - RecursionError: maximum recursion depth exceeded in comparison
-        fib(-1) - error - RecursionError: maximum recursion depth exceeded in comparison
+        s = "" - pass
+        s = "Py1thon" - pass
+        s = None - error - TypeError: object of type 'NoneType' has no len()
+        s = 123 - error - TypeError: object of type 'int' has no len()
 '''
+
+def reverse(s):
+    assert s == str(s), 'input must be a string'
+    if len(s) <=0:
+        return ""
+    else:
+        return s[-1] + reverse(s[:len(s)-1])
+
+string = "Python"
+
+print(reverse(string))
