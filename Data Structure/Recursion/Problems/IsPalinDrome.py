@@ -18,12 +18,27 @@ Example:
 '''
 Apporach:
     1. Recursive case - the flow
-        isPalindrome(s) =  
+        isPalindrome(s) =  isPalindrome(s[1:len(s)-1])
 
 
     2. Base condition - the stopping criterion
-        
+        len(s) = 0 return True
+        s[0] != s[len(s)-1] return false
 
     3. Unintentional case - the constraint
-
+        s = None - error - TypeError: object of type 'NoneType' has no len()
+        s = 123 - error - TypeError: object of type 'int' has no len()
 '''
+
+def isPalindrome(s):
+    assert s == str(s), 'input must be a string'
+    if len(s) == 0:
+        return True
+    elif s[0] != s[len(s)-1]:
+        return False
+    else:
+        return isPalindrome(s[1:len(s)-1])
+
+string = "tacocat"
+
+print(isPalindrome(string))
